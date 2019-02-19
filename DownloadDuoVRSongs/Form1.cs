@@ -23,9 +23,9 @@ namespace DownloadDuoVRSongs
         public void DownloadSongs(List<DuoVRSong> downloadLinks)
         {
             int i2 = 1;
-            for(int i = downloadLinks.Count() - 1;i >= 0; i--)
+            for (int i = downloadLinks.Count() - 1; i >= 0; i--)
             {
-                if(textBox3.Text != "")
+                if (textBox3.Text != "")
                 {
                     if (i2 > int.Parse(textBox3.Text))
                     {
@@ -48,7 +48,7 @@ namespace DownloadDuoVRSongs
                         continue;
                     }
                 }
-                  
+
                 using (WebClient wc = new WebClient())
                 {
                     label9.Text = "Downloading " + downloadLinks[i].Name;
@@ -67,7 +67,7 @@ namespace DownloadDuoVRSongs
                     {
                         continue;
                     }
-                    
+
                     DateTime lastHigh = new DateTime(1900, 1, 1);
                     string highDir = "";
                     foreach (string subdir in Directory.GetDirectories(textBox2.Text))
@@ -90,7 +90,7 @@ namespace DownloadDuoVRSongs
                 }
             }
             MessageBox.Show("Download Complete!");
-            
+
         }
         private void WriteInfos(InfoEntity info, string path)
         {
@@ -131,11 +131,11 @@ namespace DownloadDuoVRSongs
             {
                 counterString = "000" + counter.ToString();
             }
-            else if(counter > 99 && counter < 1000)
+            else if (counter > 99 && counter < 1000)
             {
                 counterString = "00" + counter.ToString();
             }
-            else if(counter > 999 && counter < 10000)
+            else if (counter > 999 && counter < 10000)
             {
                 counterString = "0" + counter.ToString();
             }
@@ -153,22 +153,23 @@ namespace DownloadDuoVRSongs
         public List<DuoVRSong> GetSongDownloads()
         {
             try
-            { 
-            List<DuoVRSong> songs1 = new List<DuoVRSong>();
-            string songs = ReturnHTML("https://raw.githubusercontent.com/DuoVR/PPFarming/master/js/songlist.tsv");
-            List<string> lines = songs.Split(
-                new[] { "\r\n", "\r", "\n" },
-                StringSplitOptions.None
-                ).ToList();
-            for (int i = lines.Count() - 1; i >= 0; i--)
             {
-                DuoVRSong song = new DuoVRSong();
-                if (lines[i].Contains("\t"))
+                List<DuoVRSong> songs1 = new List<DuoVRSong>();
+                string songs = ReturnHTML("https://raw.githubusercontent.com/DuoVR/PPFarming/master/js/songlist.tsv");
+                List<string> lines = songs.Split(
+                    new[] { "\r\n", "\r", "\n" },
+                    StringSplitOptions.None
+                    ).ToList();
+                for (int i = lines.Count() - 1; i >= 0; i--)
                 {
-                    song.Name = lines[i].Split(new string[] { "\t" }, StringSplitOptions.None)[0];
-                    song.PP = double.Parse(lines[i].Split(new string[] { "\t" }, StringSplitOptions.None)[1]);
-                        string temp = lines[i].Split(new string[] { "\t" }, StringSplitOptions.None)[3].Split('★')[0];
-                        if(temp == "")
+                    DuoVRSong song = new DuoVRSong();
+                    if (lines[i].Contains("\t"))
+                    {
+                        string[] split = lines[i].Split(new string[] { "\t" }, StringSplitOptions.None);
+                        song.Name = split[0];
+                        song.PP = double.Parse(split[1]);
+                        string temp = split[3].Split('★')[0];
+                        if (temp == "")
                         {
                             song.Difficulty = 0;
                         }
@@ -176,40 +177,13 @@ namespace DownloadDuoVRSongs
                         {
                             song.Difficulty = double.Parse(temp);
                         }
-                    
-                    string s = lines[i];
-                    lines[i] = lines[i].Split(new string[] { "\t" }, StringSplitOptions.None)[4];
-                    s = lines[i];
-                    if (lines[i] != "EMPTY" && s != "")
-                    {
-                        s = lines[i];
-                        lines[i] = lines[i].Split(new string[] { "'" }, StringSplitOptions.None)[1];
-                        s = lines[i];
-                        if (lines[i].Contains('/'))
-                        {
-                            s = lines[i];
-                            lines[i] = lines[i].Split('/')[6];
-                            s = lines[i];
-                            lines[i] = lines[i].Split('.')[0];
-                            song.ID = lines[i];
-                            lines[i] = "https://beatsaver.com/download/" + lines[i];
-                            song.URL = lines[i];
-                            songs1.Add(song);
-                        }
-                        else
-                        {
-                            lines.Remove(lines[i]);
-                        }
+                        song.ID = split[5];
+                        song.URL = "https://beatsaver.com/download/" + split[5];
+                        songs1.Add(song);
                     }
-                    else
-                    {
-                        lines.Remove(lines[i]);
-                    }
-
                 }
-            }
 
-            return songs1;
+                return songs1;
             }
             catch (Exception ex)
             {

@@ -1,0 +1,14 @@
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\bin\Debug\DownloadDuoVRSongs.exe.config
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\bin\Debug\DownloadDuoVRSongs.exe
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\bin\Debug\DownloadDuoVRSongs.pdb
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\obj\Debug\DownloadDuoVRSongs.csprojResolveAssemblyReference.cache
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\obj\Debug\DownloadDuoVRSongs.Form1.resources
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\obj\Debug\DownloadDuoVRSongs.Properties.Resources.resources
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\obj\Debug\DownloadDuoVRSongs.csproj.GenerateResource.Cache
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\obj\Debug\DownloadDuoVRSongs.csproj.CoreCompileInputs.cache
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\obj\Debug\DownloadDuoVRSongs.exe
+C:\Users\tmarini\Documents\Visual Studio 2017\Projects\DownloadDuoVRSongs\DuoVRDownloader\DownloadDuoVRSongs\obj\Debug\DownloadDuoVRSongs.pdb
